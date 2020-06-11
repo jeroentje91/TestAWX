@@ -1,5 +1,5 @@
 ---
-  remote_user: beheerder
+- remote_user: beheerder
   become: true
   tasks:
   - name: alles updaten
