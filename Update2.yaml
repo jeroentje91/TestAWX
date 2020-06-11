@@ -1,0 +1,44 @@
+---
+- remote_user: beheerder
+  become: true
+  tasks:
+  - name: alles updaten
+    apt:
+      name: "*"
+      state: latest
+    register: bijwerken    
+  - name: alles bijwerken van tevoren
+    apt:
+      upgrade: dist
+  - name: apt-get update
+    apt:
+      update_cache: yes
+      register: bijwerken
+
+  - name: server reboot ivm updates
+    reboot:
+    when: bijwerken.changed
+
+  - name: Installeer update manager core
+    apt:
+      name: update-manager-core
+      state: latest
+
+  - name: bijwerken naar meest recente versie
+    command: do-release-upgrade -d -f DistUpgradeViewNonInteractive
+    when: ansible_facts['distribution_release'] <  "focal"
+    register: versie
+
+  - name: systeem herstarten
+    reboot:
+      reboot_timeout: 3600
+    when: versie.changed
+      
+  - name: cache purgen
+    apt:
+      autoremove: yes
+      purge: yes
+  
+  - name: voor de zekerheid herstarten
+    reboot:
+      reboot_timeout: 3600
