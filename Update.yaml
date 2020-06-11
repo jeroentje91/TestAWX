@@ -1,5 +1,4 @@
 ---
-- hosts: webservers
   remote_user: beheerder
   become: true
   tasks:
@@ -18,7 +17,7 @@
 
   - name: server reboot ivm updates
     reboot:
-    #when: bijwerken.changed
+    when: bijwerken.changed
 
   - name: Installeer update manager core
     apt:
