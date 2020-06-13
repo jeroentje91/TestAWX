@@ -1,7 +1,7 @@
 ---
-- hosts: Webservers
-  remote_user: beheerder
-  become: true
+- hosts: all
+  #remote_user: beheerder
+  #become: true
   tasks:
   - name: alles updaten
     apt:
