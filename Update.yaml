@@ -14,11 +14,10 @@
   - name: apt-get update
     apt:
       update_cache: yes
-    register: bijwerken
 
   - name: server reboot ivm updates
     reboot:
-    when: bijwerken.changed
+    when: bijwerken.ok
 
   - name: Installeer update manager core
     apt:
