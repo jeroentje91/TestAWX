@@ -6,8 +6,7 @@
   - name: alles updaten
     apt:
       name: "*"
-      state: latest
-    register: bijwerken    
+      state: latest  
   - name: alles bijwerken van tevoren
     apt:
       upgrade: dist
@@ -17,7 +16,6 @@
 
   - name: server reboot ivm updates
     reboot:
-    when: bijwerken.ok
 
   - name: Installeer update manager core
     apt:
