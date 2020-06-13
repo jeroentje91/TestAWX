@@ -14,7 +14,7 @@
   - name: apt-get update
     apt:
       update_cache: yes
-      register: bijwerken
+    register: bijwerken
 
   - name: server reboot ivm updates
     reboot:
