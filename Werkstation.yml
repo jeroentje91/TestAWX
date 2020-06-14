@@ -1,20 +1,20 @@
 ---
 - hosts: all
   tasks:
--  name: Overbodige packages verwijderen
-   win_chocolatey:
-     name:
-     - Microsoft.People
-     - Microsoft.ZuneMusic
-     - Microsoft.YourPhone
-     - Microsoft.ZuneVideo
-     - Microsoft.Lockapp
-     - Microsoft.Wallet
-     - Microsoft.Screenscetch
-     - Microsoft.SkypeApp
-     - Microsoft.Edge
-     state: absent
--  name: Installeer FF
-   win_chocolatey:
-     name: firefox
-     state: present
+-   name: Overbodige packages verwijderen
+    win_chocolatey:
+      name:
+      - Microsoft.People
+      - Microsoft.ZuneMusic
+      - Microsoft.YourPhone
+      - Microsoft.ZuneVideo
+      - Microsoft.Lockapp
+      - Microsoft.Wallet
+      - Microsoft.Screenscetch
+      - Microsoft.SkypeApp
+      - Microsoft.Edge
+      state: absent
+-   name: Installeer FF
+    win_chocolatey:
+      name: firefox
+      state: present
