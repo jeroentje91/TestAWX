@@ -16,5 +16,5 @@
      state: absent
 - name: Installeer FF
 win_chocolatey:
-  name: Firefox
+  name: firefox
   state: present
