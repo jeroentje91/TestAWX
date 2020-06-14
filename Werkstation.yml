@@ -1,18 +1,9 @@
 ---
 - hosts: all
   tasks:
-  - name: Overbodige packages verwijderen
-    win_chocolatey:
-      name:
-      - Microsoft.People
-      - Microsoft.ZuneMusic
-      - Microsoft.YourPhone
-      - Microsoft.ZuneVideo
-      - Microsoft.Lockapp
-      - Microsoft.Wallet
-      - Microsoft.Screenscetch
-      - Microsoft.SkypeApp
-      - Microsoft.Edge
+  - name: Edge verwijderen
+    win_package:
+      product_id: Microsoft.Edge
       state: absent
     register: verwijderen 
   - name: Installeer Firefox
