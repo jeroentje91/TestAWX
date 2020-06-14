@@ -14,7 +14,12 @@
       - Microsoft.SkypeApp
       - Microsoft.Edge
       state: absent
+    register: verwijderen 
   - name: Installeer Firefox
     win_chocolatey:
       name: firefox
       state: present
+  - name: systeem rebooten voor de zekerheid
+    win_reboot:
+
+
