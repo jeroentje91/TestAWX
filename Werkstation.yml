@@ -11,7 +11,7 @@
     win_shell: Get-AppxPackage *windowscommunicationsapps* | Remove-AppxPackage
   
   - name: Edge verwijderen
-    win_shell: Get-AppxPackage *Edge* | Remove-AppxPackage
+    win_shell: Get-AppxPackage *MicrosoftEdge* | Remove-AppxPackage
   - name: systeem rebooten voor de zekerheid
     win_reboot:
 
