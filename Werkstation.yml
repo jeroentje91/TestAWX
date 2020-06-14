@@ -1,15 +1,17 @@
 ---
 - hosts: all
   tasks:
-  - name: Edge verwijderen
-    win_package:
-      product_id: Microsoft.Edge
-      state: absent
-    register: verwijderen 
+  - name: Nieuws verwijderen
+    win_shell: Get-AppxPackage *bingnews* | Remove-AppxPackage
   - name: Installeer Firefox
     win_chocolatey:
       name: firefox
       state: present
+  - name: Mail en agenda verwijderen
+    win_shell: Get-AppxPackage *windowscommunicationsapps* | Remove-AppxPackage
+  
+  - name: Edge verwijderen
+    win_shell: Get-AppxPackage *Edge* | Remove-AppxPackage
   - name: systeem rebooten voor de zekerheid
     win_reboot:
 
