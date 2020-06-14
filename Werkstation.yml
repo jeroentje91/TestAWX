@@ -14,7 +14,7 @@
      - Microsoft.SkypeApp
      - Microsoft.Edge
      state: absent
-- name: Installeer FF
-win_chocolatey:
-  name: firefox
-  state: present
+-  name: Installeer FF
+   win_chocolatey:
+     name: firefox
+     state: present
