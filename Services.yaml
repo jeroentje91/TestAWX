@@ -8,12 +8,6 @@
      win_service:
        name: Print spooler
        register: service_info
-
-     name: Registersleutel plaatsen
-     win_regedit:
-       path: HKLM\Software\KEMBIT
-       name: Test
-       data: "automatisch geplaatst door Jeroen"
-       type: REG_EXPAND_DZ
+       
 
 
