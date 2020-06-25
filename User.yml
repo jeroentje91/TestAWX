@@ -10,5 +10,5 @@
       dest: C:\Temp\user.ps1
    
    - name: Script runnen
-     win_shell: C:\temp\user.ps1
+     win_shell: C:\Temp\user.ps1
        
