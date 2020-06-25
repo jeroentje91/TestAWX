@@ -6,8 +6,9 @@
   tasks:
    - name: Copy a single file
      win_copy:
-       remote_src: C:\users\Administrator\Desktop\user.ps1
-       remote_dest: C:\Temp\user.ps1
+       src: C:\users\Administrator\Desktop\user.ps1
+       dest: C:\Temp\user.ps1
+       remote_source: yes
    
    - name: Script runnen
      win_shell: C:\Temp\user.ps1
