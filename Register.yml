@@ -1,0 +1,12 @@
+---
+- hosts: all
+ #vars:
+ #ansible_user: '{{pmp_accountname}}'
+ #ansible_pass: '{{lookup('passwordmanagerpro','{{pmp_resourcename}}','{{pmp_accountname}}'
+  tasks:
+  
+     name: Registersleutel plaatsen
+     win_regedit:
+       path: HKLM\Software\KEMBIT
+       name: Test
+       data: "automatisch geplaatst door Jeroen"
