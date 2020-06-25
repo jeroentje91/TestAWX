@@ -8,9 +8,6 @@
      win_service:
        name: wuauserv
        register: service_info
-   - name: Status printen
-     debug:
-       msg: "Service draait"
 
      name: Registersleutel plaatsen
      win_regedit:
