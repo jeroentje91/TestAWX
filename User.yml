@@ -4,6 +4,11 @@
  #ansible_user: '{{pmp_accountname}}'
  #ansible_pass: '{{lookup('passwordmanagerpro','{{pmp_resourcename}}','{{pmp_accountname}}'
   tasks:
-   - name: User aanmaken
-     win_shell: New-ADUser -Name Jeroen Hofland -Description Gemaakt in Ansible -path OU=Test, DC=Hofland, DC=org
+   - name: Copy a single file
+    win_copy:
+      src: C:\users\Administrator\Desktop\user.ps1
+      dest: C:\Temp\user.ps1
+   
+   - name: Script runnen
+     win_shell: C:\temp\user.ps1
        
