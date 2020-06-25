@@ -1,0 +1,9 @@
+---
+- hosts: all
+ #vars:
+ #ansible_user: '{{pmp_accountname}}'
+ #ansible_pass: '{{lookup('passwordmanagerpro','{{pmp_resourcename}}','{{pmp_accountname}}'
+  tasks:
+   - name: User aanmaken
+     win_shell: New-ADUser -Name “Karim Buzdar" -GivenName Karim -Surname Buzdar -SamAccountName kbuzdar -UserPrincipalName kbuzdar@hofland.org -path "OU=Test, DC=Hofland, DC=org
+       
