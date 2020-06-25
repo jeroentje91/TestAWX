@@ -10,8 +10,7 @@
        register: service_info
    - name: Status printen
      debug:
-       var: service_info
-       msg: "Service draait"    
+       msg: "Service draait{{service_info}}"    
 
 
 
