@@ -4,10 +4,10 @@
  #ansible_user: '{{pmp_accountname}}'
  #ansible_pass: '{{lookup('passwordmanagerpro','{{pmp_resourcename}}','{{pmp_accountname}}'
   tasks:
-     name: Service controleren
+   - name: Service controleren
      win_service:
-       name: Print spooler
+       name: wuauserv
        register: service_info
-       
+
 
 
