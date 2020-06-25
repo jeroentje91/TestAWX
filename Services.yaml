@@ -1,6 +1,6 @@
 ---
 - hosts: all
-vars:
+ #vars:
  #ansible_user: '{{pmp_accountname}}'
  #ansible_pass: '{{lookup('passwordmanagerpro','{{pmp_resourcename}}','{{pmp_accountname}}'
   tasks:
