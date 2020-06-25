@@ -5,5 +5,5 @@
  #ansible_pass: '{{lookup('passwordmanagerpro','{{pmp_resourcename}}','{{pmp_accountname}}'
   tasks:
    - name: User aanmaken
-     win_shell: New-ADUser -Name “Jeroen Hofland" -path "OU=Test, DC=Hofland, DC=org"
+     win_command: New-ADUser -Name “Jeroen Hofland" -Description "Gemaakt in Ansible" -path "OU=Test, DC=Hofland, DC=org"
        
