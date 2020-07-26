@@ -6,9 +6,10 @@
   tasks:
   - name: user aanmaken met variabelen
     win_domain_user:
-      name: '{{name}}'
+      upn: '{{gebruikersnaam}}'
       firstname: '{{voornaam}}'
       surname: '{{achternaam}}'
       password: '{{wachtwoord}}'
+      email: '{{email}}'
       state: present
        
