@@ -9,5 +9,6 @@
       name: bob
       firstname: Bob
       surname: Smith
+      password: B0bP4ssw0rd
       state: present
        
