@@ -4,11 +4,11 @@
  #ansible_user: '{{pmp_accountname}}'
  #ansible_pass: '{{lookup('passwordmanagerpro','{{pmp_resourcename}}','{{pmp_accountname}}'
   tasks:
-  - name: Ensure user bob is created and use custom credentials to create the user
+  - name: user aanmaken met variabelen
     win_domain_user:
-      name: bob
-      firstname: Bob
-      surname: Smith
-      password: B0bP4ssw0rd
+      name: {{name}}
+      firstname: {{voornaam}}
+      surname: {{achternaam}}
+      password: {{wachtwoord}}
       state: present
        
