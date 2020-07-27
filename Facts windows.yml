@@ -1,6 +1,6 @@
 ---
--host: all
+- host: all
  tasks:
-    name: Hostname teruggeven
-    debug: "{{ansible_netbios_name}}"
+ - name: Hostname teruggeven
+   debug: "{{ansible_netbios_name}}"
     
