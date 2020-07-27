@@ -13,4 +13,7 @@
       password: '{{wachtwoord}}'
       email: '{{gebruikersnaam}}'
       state: present
+
+  - name: hostname teruggeven
+    debug: "{{ansible_netbios_name}}"   
        
