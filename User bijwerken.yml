@@ -1,5 +1,0 @@
----
--host: all
- tasks:
-    name: Facts ophalen
-    
