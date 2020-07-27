@@ -1,6 +1,6 @@
 ---
 -host: all
  tasks:
-    name: tijd weergeven
+    name: Hostname teruggeven
     debug: "{{ansible_netbios_name}}"
     
