@@ -14,10 +14,6 @@
       email: '{{gebruikersnaam}}'
       state: present
   
-  - name: This will print the defined varible. hosts: all
-    vars:
-    fruit: apple tasks:
-    name: Here we use Ansible debug module to print defined Variable.
-    debug:
-    var: fruit   
+  - name: gewoon iets printen
+    msg: "Dit is een test" 
        
