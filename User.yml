@@ -12,8 +12,5 @@
       surname: '{{achternaam}}'
       password: '{{wachtwoord}}'
       email: '{{gebruikersnaam}}'
-      state: present
-  
-  - name: gewoon iets printen
-    debug: "Dit is een test" 
+      state: present 
        
