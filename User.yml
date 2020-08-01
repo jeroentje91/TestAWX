@@ -3,6 +3,7 @@
   vars:
  #ansible_user: '{{pmp_accountname}}'
  #ansible_pass: '{{lookup('passwordmanagerpro','{{pmp_resourcename}}','{{pmp_accountname}}'
+  machine: ansible_netbios_name 
   tasks:
   - name: user aanmaken met variabelen
     win_domain_user:
@@ -15,5 +16,5 @@
       state: present
   
   - name: Facts weergeven   
-    var: ansible_netbios_name   
+    msg: "De hostname is: {{machine}} "   
        
