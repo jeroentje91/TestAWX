@@ -1,10 +1,10 @@
 ---
 - hosts: all
   tasks:
-  - name: Firefox verwijderen
-    win_chocolatey:
-      name: firefox
-      state: absent
+  - name: Firefox installeren via MSI
+    win_package:
+      path: https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win64&lang=en-US 
+      state: present
   - name: alle updates installeren
     win_updates:
       category_names:
