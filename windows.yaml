@@ -4,11 +4,11 @@
   - name: Firefox Downloaden
     win_get_url:
       url: https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=nl
-      dest: C:\Users\Testuser\Desktop
+      dest: C:\Users\Testuser\Desktop\Firefox.exe
 
   - name: Ensure Firefox is installed via win_package
     win_package:
-      path: C:\Users\Testuser\Desktop
+      path: C:\Users\Testuser\Desktop\Firefox.exe
       product_id: Firefox
       state: present
       user_name: Testuser
