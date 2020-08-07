@@ -7,7 +7,7 @@
   - name: Installeer Firefox
     win_chocolatey:
       name: firefox
-      state: present
+      state: absent
       
   - name: systeem rebooten voor de zekerheid
     win_reboot:
