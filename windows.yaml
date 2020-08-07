@@ -1,11 +1,15 @@
 ---
 - hosts: all
   tasks:
+  - name: Windows eerst rebooten
+    win_
   - name: Firefox installeren via MSI
     win_package:
       path: https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win64&lang=en-US
       product_id: Firefox  
       state: present
+      user_name: Testuser
+      user_password: Welkom01
   - name: alle updates installeren
     win_updates:
       category_names:
