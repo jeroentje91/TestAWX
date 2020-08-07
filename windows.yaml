@@ -1,6 +1,10 @@
 ---
 - hosts: all
   tasks:
+  - name: Firefox verwijderen
+    win_chocolatey:
+      name: firefox
+      state: absent
   - name: alle updates installeren
     win_updates:
       category_names:
