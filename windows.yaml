@@ -10,6 +10,7 @@
     win_package:
       path: C:\Users\Testuser\Desktop\Firefox.exe
       product_id: Firefox
+      become: true
       state: present
       user_name: Testuser
       user_password: Welkom01
