@@ -1,29 +1,23 @@
 ---
 - hosts: all
   tasks:
-  - name: Map aanmaken om .exe in te zetten
-    win_command: mkdir C:\Temp
-    
-  - name: Firefox Downloaden
-    win_get_url:
-      url: https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=nl
-      dest: C:\Users\Testuser\Desktop\Firefox.exe
+- name: Firefox Downloaden
+  win_get_url:
+    url: https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win64&lang=nl
+    dest: C:\Users\Testuser\Desktop\Firefox.msi
 
-  - name: Ensure Firefox is installed via win_package
-    win_package:
-      path: C:\Users\Testuser\Desktop\Firefox.exe
-      product_id: Firefox
-      become: true
-      state: present
-      user_name: Testuser
-      user_password: Welkom01
-  - name: alle updates installeren
-    win_updates:
-      category_names:
-      - CriticalUpdates
-      - SecurityUpdates
-      state: installed
+- name: Firefox installeren
+  win_package:
+    path: C:\Users\Testuser\Desktop\Firefox.msi
+    state: present  
+ 
+- name: alle updates installeren
+  win_updates:
+    category_names:
+    - CriticalUpdates
+    - SecurityUpdates
+    state: installed
     register: updates
-  - name: Reboot host if required
-    win_reboot:
-    when: updates.reboot_required
+- name: Reboot host if required
+  win_reboot:
+  when: updates.reboot_required
