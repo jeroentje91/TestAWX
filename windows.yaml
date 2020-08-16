@@ -10,14 +10,9 @@
     win_package:
       path: C:\Users\Testuser\Desktop\Firefox.msi
       state: present
-        
-  - name: alle updates installeren
+
+  - name: Security updates installeren
     win_updates:
       category_names:
-      - CriticalUpdates
       - SecurityUpdates
-      state: installed
-    register: updates
-  - name: Reboot host if required
-    win_reboot:
-    when: updates.reboot_required
+      reboot: yes
