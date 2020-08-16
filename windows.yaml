@@ -15,6 +15,6 @@
     win_updates:
       category_names:
       - SecurityUpdates
-      blacklist:
-      - KB4566782
+      #blacklist:
+      #- KB4566782
       reboot: yes
