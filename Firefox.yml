@@ -3,6 +3,8 @@
   tasks:
   - name: Map aanmaken om .exe in te zetten
     win_command: mkdir C:\Temp
+    args:
+      creates: C:\Temp
     
   - name: Firefox Downloaden
     win_get_url:
