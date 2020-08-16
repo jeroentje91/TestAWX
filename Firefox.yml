@@ -8,5 +8,5 @@
     
   - name: Firefox Downloaden
     win_get_url:
-      url: https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=nl
+      url: https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win64&lang=nl
       dest: C:\Temp\Firefox.exe
