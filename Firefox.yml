@@ -1,12 +1,7 @@
 ---
 - hosts: all
-  tasks:
-  - name: Map aanmaken om .exe in te zetten
-    win_command: mkdir C:\Temp
-    args:
-      creates: C:\Temp
-    
+  tasks: 
   - name: Firefox Downloaden
     win_get_url:
       url: https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win64&lang=nl
-      dest: C:\Temp\Firefox.exe
+      dest: C:\Users\Testuser\Desktop\Firefox.exe
