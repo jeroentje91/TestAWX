@@ -3,6 +3,10 @@
   remote_user: beheerder
   become: true
   tasks:
+  - name: Reboot voor geval deze pending is
+    reboot:
+      reboot_timeout: 3600
+      
   - name: alles updaten
     apt:
       name: "*"
