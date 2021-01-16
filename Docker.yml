@@ -1,7 +1,8 @@
 ---
-- hosts: Webservers
+- hosts: all
   remote_user: beheerder
   become: true
+
   tasks:
   - name: Updaten voor installatie
     apt:
