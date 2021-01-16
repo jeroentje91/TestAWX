@@ -11,8 +11,7 @@
   - name: server reboot ivm updates
     reboot:
     when: bijwerken.changed
-  - name: 
-
+    
   - name: ca-certificates installeren
     apt:
       name: ca-certificates
@@ -29,6 +28,23 @@
   
   - name: apt-transport-https installeren
     apt:
-      name: apt-transport-https
-      state: latest   
-  
+
+
+- name: Docker gpg repo key downloaden
+  ansible.builtin.apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Docker GPG repo toevoegen
+  ansible.builtin.apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+    state: present
+
+- name: Updaten i.v.m toevoegen Docker repo
+   apt:
+     update_cache: yes
+     register: bijwerken
+
+- name: server reboot voor de zekerheid
+  reboot:
+  when: bijwerken.changed
