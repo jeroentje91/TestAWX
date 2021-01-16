@@ -28,7 +28,8 @@
   
   - name: apt-transport-https installeren
     apt:
-
+      name: apt-transport-https
+      state: latest
 
   - name: Docker gpg repo key downloaden
     ansible.builtin.apt_key:
@@ -55,4 +56,4 @@
   - name: Docker zelf installeren
     apt:
       name: docker-ce
-      state: present
+      state: present    
