@@ -4,7 +4,7 @@
   become: true
 
   tasks:
-  - name: Updaten voor installatie
+  - name: apt-get update
     apt:
       update_cache: yes
       register: bijwerken
