@@ -1,0 +1,34 @@
+---
+- hosts: Webservers
+  remote_user: beheerder
+  become: true
+  tasks:
+  - name: Updaten voor installatie
+    apt:
+      update_cache: yes
+      register: bijwerken
+
+  - name: server reboot ivm updates
+    reboot:
+    when: bijwerken.changed
+  - name: 
+
+  - name: ca-certificates installeren
+    apt:
+      name: ca-certificates
+      state: latest
+  - name: curl installeren
+    apt:
+      name: curl
+      state: latest
+
+  - name: software-properties-common installeren
+    apt:
+      name: software-properties-common
+      state: latest
+  
+  - name: apt-transport-https installeren
+    apt:
+      name: apt-transport-https
+      state: latest   
+  
