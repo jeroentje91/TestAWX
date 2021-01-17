@@ -4,7 +4,12 @@
   become: true
 
   tasks:
-  - name: Pip installeren
+  - name: Pip3 zelf installeren
+    apt:
+      name: python3-pip
+      state: latest
+      
+  - name: Pip docker installeren
     pip:
       name: docker
       executable: pip3
