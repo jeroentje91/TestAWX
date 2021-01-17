@@ -4,17 +4,7 @@
   become: true
 
   tasks:
-  - name: Pip3 zelf installeren
-    apt:
-      name: python3-pip
-      state: latest
-
-  - name: Pip docker installeren
-    pip:
-      name: docker
-      executable: pip3
-
-  - name: Jira Container Docker
+  - name: Jira Container Docker uitrollen
     docker_container:
       name: Jira
       image: cptactionhank/atlassian-jira:latest
