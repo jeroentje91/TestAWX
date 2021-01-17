@@ -4,6 +4,10 @@
   become: true
 
   tasks:
+  - name: Pip installeren
+    pip:
+      name: docker-py
+      
   - name: Jira Container Docker
     docker_container:
       name: Jira
