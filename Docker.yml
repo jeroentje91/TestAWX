@@ -12,25 +12,30 @@
   - name: server reboot ivm updates
     reboot:
     when: bijwerken.changed
-    
-  - name: ca-certificates installeren
+
+  - name: Prequisites installeren
     apt:
-      name: ca-certificates
-      state: latest
-  - name: curl installeren
-    apt:
-      name: curl
+      name: ['ca-certificates','curl','software-properties-common','apt-transport-https']  
       state: latest
 
-  - name: software-properties-common installeren
-    apt:
-      name: software-properties-common
-      state: latest
+  # - name: ca-certificates installeren
+  #   apt:
+  #     name: ca-certificates
+  #     state: latest
+  # - name: curl installeren
+  #   apt:
+  #     name: curl
+  #     state: latest
+
+  # - name: software-properties-common installeren
+  #   apt:
+  #     name: software-properties-common
+  #     state: latest
   
-  - name: apt-transport-https installeren
-    apt:
-      name: apt-transport-https
-      state: latest
+  # - name: apt-transport-https installeren
+  #   apt:
+  #     name: apt-transport-https
+  #     state: latest
 
   - name: Docker gpg repo key downloaden
     ansible.builtin.apt_key:
