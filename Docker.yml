@@ -37,15 +37,12 @@
       url: https://download.docker.com/linux/ubuntu/gpg
       state: present
 
-  - name: Docker repo toevoegen
+  - name: Docker repo toevoegen en cache bijwerken
     ansible.builtin.apt_repository:
       repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
       state: present
-
-  - name: Updaten i.v.m toevoegen Docker repo
-    apt:
       update_cache: yes
-    register: bijwerken
+     register: bijwerken 
 
   - name: server reboot voor de zekerheid
     reboot:
