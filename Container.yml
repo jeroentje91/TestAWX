@@ -7,6 +7,7 @@
   - name: Pip installeren
     pip:
       name: docker
+      executable: pip3
 
   - name: Jira Container Docker
     docker_container:
