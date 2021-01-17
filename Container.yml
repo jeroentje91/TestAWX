@@ -4,19 +4,13 @@
   become: true
 
   tasks:
-    -name: Container test
-     community.general.docker_container:
-       name:
-       image: nginx:latest
-       state: started
-
-  # - name: Jira Container Docker
-  #   community.general.docker_container:
-  #     name: Jira
-  #     image: cptactionhank/atlassian-jira:latest
-  #     state: started
-  #     restart: yes
-  #     detach: yes
-  #     ports:
-  #      # Publish container port 9000 as host port 8080
-  #      - "8080:8080"
+  - name: Jira Container Docker
+    docker_container:
+      name: Jira
+      image: cptactionhank/atlassian-jira:latest
+      state: started
+      restart: yes
+      detach: yes
+      ports:
+       # Publish container port 9000 as host port 8080
+       - "8080:8080"
