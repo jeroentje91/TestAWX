@@ -8,7 +8,7 @@
     apt:
       name: python3-pip
       state: latest
-      
+
   - name: Pip docker installeren
     pip:
       name: docker
@@ -19,7 +19,7 @@
       name: Jira
       image: cptactionhank/atlassian-jira:latest
       state: started
-      restart: yes
+      restart_policy: always
       detach: yes
       ports:
        # Publish container port 9000 as host port 8080
