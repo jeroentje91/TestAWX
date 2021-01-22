@@ -14,10 +14,7 @@
   #     ports:
   #      # Publish container port 9000 as host port 8080
   #      - "8080:8080"
-  - name: community module installeren
-    command: ansible-galaxy collection install community.general
-    
-  - name: Jira Container Docker uitrollen met commun module
+  - name: Jira Container Docker uitrollen met comm module
     community.general.docker_container:
       name: Jira
       image: cptactionhank/atlassian-jira:latest
