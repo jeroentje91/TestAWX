@@ -4,7 +4,7 @@
   become: true
 
   tasks:
-  - name: apt-get update
+  - name: apt bijwerken
     apt:
       update_cache: yes
     register: bijwerken
@@ -28,11 +28,11 @@
       repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
       state: present
       update_cache: yes
-    register: bijwerken 
+    register: repo 
 
   - name: server reboot voor de zekerheid
     reboot:
-    when: bijwerken.changed
+    when: repo.changed
 
   - name: Docker installeren vanuit Docker Repo
     command: apt-cache policy docker-ce
