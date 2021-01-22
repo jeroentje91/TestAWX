@@ -4,23 +4,9 @@
   become: true
 
   tasks:
-  # - name: Jira Container Docker uitrollen
-  #   docker_container:
-  #     name: Jira
-  #     image: cptactionhank/atlassian-jira:latest
-  #     state: started
-  #     restart_policy: always
-  #     detach: yes
-  #     ports:
-  #      # Publish container port 9000 as host port 8080
-  #      - "8080:8080"
-  - name: Jira Container Docker uitrollen met comm module
+  - name: Create a data container
     community.general.docker_container:
-      name: Jira
-      image: cptactionhank/atlassian-jira:latest
-      state: started
-      restart_policy: always
-      detach: yes
-      ports:
-       # Publish container port 9000 as host port 8080
-       - "8080:8080"      
+      name: mydata
+      image: busybox
+      volumes:
+        - /data
