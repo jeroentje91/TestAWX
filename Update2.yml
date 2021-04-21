@@ -1,6 +1,6 @@
 ---
 - hosts: Webservers
-  remote_user: beheerder
+  remote_user: beheerder #commentaar
   become: true
   tasks:
   - name: Reboot voor geval deze pending is
