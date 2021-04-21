@@ -1,0 +1,16 @@
+---
+- hosts: all
+ #vars:
+ #ansible_user: '{{pmp_accountname}}'
+ #ansible_pass: '{{lookup('passwordmanagerpro','{{pmp_resourcename}}','{{pmp_accountname}}'
+  tasks:
+   - name: Service controleren
+     win_service:
+       name: wuauserv
+       register: service_info
+
+- name: Status printen
+     debug:
+       msg: "Service draait"
+
+

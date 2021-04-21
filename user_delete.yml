@@ -1,0 +1,11 @@
+---
+- hosts: all
+  vars:
+ #ansible_user: '{{pmp_accountname}}'
+ #ansible_pass: '{{lookup('passwordmanagerpro','{{pmp_resourcename}}','{{pmp_accountname}}'
+  tasks:
+  - name: User verwijderen door naam op te geven
+    win_domain_user:
+      name: '{{name}}'
+      state: absent 
+       

@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks: 
+  - name: Firefox Downloaden
+    win_get_url:
+      url: https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win64&lang=nl
+      dest: C:\Users\Testuser\Desktop\Firefox.msi
+
+  - name: Firefox installeren
+    win_package:
+      path: C:\Users\Testuser\Desktop\Firefox.msi
+      state: present

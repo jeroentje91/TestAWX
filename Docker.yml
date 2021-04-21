@@ -1,0 +1,53 @@
+---
+- hosts: all
+  remote_user: beheerder
+  become: true
+
+  tasks:
+  - name: apt bijwerken
+    apt:
+      update_cache: yes
+    register: bijwerken
+
+  - name: server reboot ivm updates
+    reboot:
+    when: bijwerken.changed
+
+  - name: Prequisites installeren
+    apt:
+      name: ['ca-certificates','curl','software-properties-common','apt-transport-https']  
+      state: latest
+
+  - name: Docker gpg repo key downloaden
+    ansible.builtin.apt_key:
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+
+  - name: Docker repo toevoegen en cache bijwerken
+    ansible.builtin.apt_repository:
+      repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+      state: present
+      update_cache: yes
+    register: repo 
+
+  - name: server reboot voor de zekerheid
+    reboot:
+    when: repo.changed
+
+  - name: Docker installeren vanuit Docker Repo
+    command: apt-cache policy docker-ce
+
+  - name: Docker zelf installeren
+    apt:
+      name: docker-ce
+      state: present
+  
+  - name: Pip3 installeren
+    apt:
+      name: python3-pip
+      state: latest
+
+  - name: Pip docker installeren
+    pip:
+      name: docker
+      executable: pip3
