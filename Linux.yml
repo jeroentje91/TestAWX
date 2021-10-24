@@ -5,7 +5,7 @@
   tasks:
   - name: hostname aanpassen
     ansible.builtin.hostname:
-       name: "{{hostname}}"
+       name: '{{hostname}}'
 
   - name: Reboot voor geval deze pending is
     reboot:
