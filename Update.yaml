@@ -27,7 +27,7 @@
 
   - name: bijwerken naar meest recente versie
     command: do-release-upgrade -d -f DistUpgradeViewNonInteractive
-    when: ansible_facts['distribution_release'] <  "focal"
+    when: ansible_facts['distribution_release'] <  "impish"
     register: versie
 
   - name: systeem herstarten
