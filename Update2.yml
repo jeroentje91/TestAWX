@@ -30,8 +30,8 @@
       state: latest
 
   - name: bijwerken naar meest recente versie
-    command: do-release-upgrade -d -f DistUpgradeViewNonInteractive
-    when: ansible_facts['distribution_release'] <  "focal"
+    command: do-release-upgrade -f DistUpgradeViewNonInteractive
+    when: ansible_facts['distribution_release'] <  "yammy"
     register: versie
 
   - name: systeem herstarten
