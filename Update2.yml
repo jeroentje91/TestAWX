@@ -31,7 +31,7 @@
 
   - name: bijwerken naar meest recente versie
     command: do-release-upgrade -f DistUpgradeViewNonInteractive
-    when: ansible_facts['distribution_release'] <  "yammy"
+    when: ansible_facts['distribution_release'] <  "jammy"
     register: versie
 
   - name: systeem herstarten
